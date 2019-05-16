@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Controls="clr-namespace:SiteHand.Core.Controls"
+             x:Class="SiteHand.Core.Views.DetailBook"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="GoSettingsPage" Icon="settings.png">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Margin="20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <!--Header-->
+                <StackLayout Grid.Row="0">
+                    <Label Text="{Binding Volume.volumeInfo.title}" FontSize="16" LineBreakMode="WordWrap" FontAttributes="Bold"></Label>
+                    <Label Text="{Binding Volume.volumeInfo.authors[0]}" LineBreakMode="WordWrap" FontSize="Small"></Label>
+                </StackLayout>
+
+                <!--Image of Book or Magazine-->
+                <Image Source="{Binding Volume.volumeInfo.imageLinks.thumbnail}" Grid.Row="1" HeightRequest="100" WidthRequest="90" Aspect="AspectFit"></Image>
+
+                <!--Body-->
+                <StackLayout Grid.Row="2">
+                    <Label Text="Description" LineBreakMode="WordWrap" FontAttributes="Bold"></Label>
+                    <Label Text="{Binding Volume.volumeInfo.description}" LineBreakMode="WordWrap"></Label>
+                    <Label Text="Categorie" LineBreakMode="WordWrap" FontSize="Large" FontAttributes="Bold"></Label>
+                    <Label Text="{Binding Volume.volumeInfo.categories[0]}" LineBreakMode="WordWrap"></Label>
+                </StackLayout>
+
+                <!--footer-->
+                <StackLayout Grid.Row="3">
+                    <Label Text="Buying Information" LineBreakMode="WordWrap" FontAttributes="Bold"></Label>
+                    <Label Text="{Binding Volume.saleInfo.country}" LineBreakMode="WordWrap"></Label>
+                    <Label Text="{Binding Volume.saleInfo.saleability}" LineBreakMode="WordWrap"></Label>
+                    <Label Text="{Binding Volume.saleInfo.retailPrice.amount}" LineBreakMode="NoWrap"></Label>
+                    <Label Text="{Binding Volume.saleInfo.retailPrice.currencyCode}" LineBreakMode="NoWrap"></Label>
+                    <Controls:HyperlinkLabel Text="{Binding Volume.saleInfo.buyLink}" HorizontalOptions="Center" />
+                </StackLayout>
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SiteHand.Core.Views.ListBookxPage"
+             Title="{Binding Title}"
+             x:Name="PageListBooks">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="GoSettingsPage" Icon="settings.png">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="BookListView" 
+                 ItemsSource="{Binding Items}"
+                 VerticalOptions="FillAndExpand"
+                 HasUnevenRows="true"
+                 RefreshCommand="{Binding LoadItemsCommand}"
+                 IsPullToRefreshEnabled="true"
+                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                 CachingStrategy="RecycleElement"
+                 SeparatorColor="DarkGray"
+                 ItemSelected="OnItemSelected">
+                <ListView.Header>
+                    <StackLayout Margin="0">
+                        <SearchBar Placeholder="Search Volume"
+                               SearchCommand="{Binding SearchBookCommand}"
+                               Text="{Binding SearchCriteria}"/>
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5" Orientation="Horizontal">
+                                <Image Source="{Binding volumeInfo.imageLinks.smallThumbnail}" HeightRequest="40" WidthRequest="60" Aspect="AspectFit" ></Image>
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Title" FontAttributes="Bold"  FontSize="Small"/>
+                                        <Label Text="{Binding Kind}"></Label>
+                                    </StackLayout>
+                                    <Label Text="{Binding volumeInfo.title}" 
+                                            LineBreakMode="WordWrap" 
+                                            FontSize="Small"/>
+                                    <Label Text="Author" FontAttributes="Bold"  FontSize="Small"/>
+                                    <Label Text="{Binding volumeInfo.authors[0]}" 
+                                            LineBreakMode="WordWrap"
+                                            FontSize="Small" />
+                                    <Label Text="Publisher" FontAttributes="Bold"  FontSize="Small"/>
+                                    <Label Text="{Binding volumeInfo.publisher}" 
+                                            LineBreakMode="WordWrap"
+                                            FontSize="Small" />
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding volumeInfo.publishedDate}" 
+                                            LineBreakMode="WordWrap"
+                                            FontSize="Small" />
+                                        <Label Text="{Binding saleInfo.saleability}"></Label>
+                                    </StackLayout>
+                                    
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label HorizontalOptions="CenterAndExpand" Text="{Binding MessageNotFound}" IsVisible="{Binding IsNotFound}"  Style="{StaticResource errorDescriptionStyle}" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

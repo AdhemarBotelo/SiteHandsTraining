@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "257556382323",
+    "firebase_url": "https://sitehandtraining.firebaseio.com",
+    "project_id": "sitehandtraining",
+    "storage_bucket": "sitehandtraining.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257556382323:android:8ce31200a38c5dad",
+        "android_client_info": {
+          "package_name": "com.jala.SiteHandTraining"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257556382323-4dqjr1ks5b2l8m5nqjo4roufembq5ohu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwUBJ0zBktz6370m5DHtkX4JzGolY0nzo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257556382323-4dqjr1ks5b2l8m5nqjo4roufembq5ohu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

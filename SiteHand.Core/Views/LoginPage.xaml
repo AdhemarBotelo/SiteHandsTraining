@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:SiteHand.Core.Converters"
+             x:Class="SiteHand.Core.Views.LoginPage"
+             NavigationPage.HasNavigationBar="False"
+             Title="Login">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InvertBooleanConverter x:Key="invertBooleanConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="bookStore.jpg" Aspect="AspectFill" Grid.Row="0" HeightRequest="110" HorizontalOptions="Fill"></Image>
+                <!--<BoxView BackgroundColor="Azure" Grid.Row="0"></BoxView>-->
+
+                <!--Body-->
+                <StackLayout Grid.Row="1" Margin="20,0" VerticalOptions="Center">
+                    <Label  Style="{StaticResource errorDescriptionStyle}"
+                        Text="{Binding Email.ValidationDescriptions}"
+                        IsVisible="{Binding Email.IsValid, Converter={StaticResource invertBooleanConverter}}" />
+
+                    <Entry Margin="15,15,15,0" 
+                       HeightRequest="50" 
+                       Text="{Binding Email.Value}"
+                       Placeholder="Email">
+                        <Entry.Triggers>
+                            <DataTrigger 
+                    TargetType="Entry"
+                    Binding="{Binding Email.IsValid}"
+                    Value="False">
+                                <Setter Property="TextColor" Value="Red" />
+                            </DataTrigger>
+                        </Entry.Triggers>
+                    </Entry>
+
+                    <Label  Style="{StaticResource errorDescriptionStyle}"
+                        Text="{Binding Password.ValidationDescriptions}"
+                        IsVisible="{Binding Password.IsValid, Converter={StaticResource invertBooleanConverter}}" />
+
+                    <Entry Margin="15,0,15,0" 
+                       HeightRequest="50" IsPassword="true"
+                       Placeholder="Password"
+                       Text="{Binding Password.Value}" >
+                    </Entry>
+
+                    <ActivityIndicator IsVisible="{Binding IsBusy}"
+                    IsRunning="{Binding IsBusy}" />
+
+
+                    <Label  Style="{StaticResource errorDescriptionStyle}"
+                        Text="{Binding ErrorAuthentication}"
+                        IsVisible="{Binding IsErrorAuthentication}" />
+                </StackLayout>
+
+                <Button Grid.Row="2"
+                         Text="Login"  
+                         Margin="20,5"
+                         Command="{Binding LoginCmd}" 
+                         HorizontalOptions="FillAndExpand"/>
+
+                <Image Source="user.png" 
+                       HeightRequest="80"
+                       WidthRequest="80"
+                       TranslationY="40"
+                       VerticalOptions="End" HorizontalOptions="Center"
+                       ></Image>
+            </Grid>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

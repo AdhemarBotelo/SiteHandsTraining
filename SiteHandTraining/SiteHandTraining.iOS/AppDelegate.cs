@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿
 using Foundation;
+using SiteHand.Core;
+using SiteHandTraining.iOS.Services;
 using UIKit;
 
 namespace SiteHandTraining.iOS
@@ -23,7 +22,8 @@ namespace SiteHandTraining.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            Firebase.Core.App.Configure();
+            LoadApplication(new App(new IOSModule()));
 
             return base.FinishedLaunching(app, options);
         }

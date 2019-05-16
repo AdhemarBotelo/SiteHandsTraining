@@ -7,14 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteHandTraining.Android", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteHandTraining.iOS", "SiteHandTraining\SiteHandTraining.iOS\SiteHandTraining.iOS.csproj", "{93B5D752-F37E-4749-AA74-1B1100033C6F}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SiteHandTraining", "SiteHandTraining\SiteHandTraining\SiteHandTraining.shproj", "{90ED6412-15F2-485F-87DD-5C06B795A26A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteHand.Core", "SiteHand.Core\SiteHand.Core.csproj", "{30377269-FA54-40A4-A20C-B6E874F134AE}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		SiteHandTraining\SiteHandTraining\SiteHandTraining.projitems*{90ed6412-15f2-485f-87dd-5c06b795a26a}*SharedItemsImports = 13
-		SiteHandTraining\SiteHandTraining\SiteHandTraining.projitems*{93b5d752-f37e-4749-aa74-1b1100033c6f}*SharedItemsImports = 4
-		SiteHandTraining\SiteHandTraining\SiteHandTraining.projitems*{9bf1d906-d382-4be5-8665-8829abbc669d}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|iPhone = Debug|iPhone
@@ -60,6 +55,18 @@ Global
 		{93B5D752-F37E-4749-AA74-1B1100033C6F}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{93B5D752-F37E-4749-AA74-1B1100033C6F}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{93B5D752-F37E-4749-AA74-1B1100033C6F}.Release|iPhoneSimulator.Deploy.0 = Release|iPhoneSimulator
+		{30377269-FA54-40A4-A20C-B6E874F134AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30377269-FA54-40A4-A20C-B6E874F134AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30377269-FA54-40A4-A20C-B6E874F134AE}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{30377269-FA54-40A4-A20C-B6E874F134AE}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{30377269-FA54-40A4-A20C-B6E874F134AE}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{30377269-FA54-40A4-A20C-B6E874F134AE}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{30377269-FA54-40A4-A20C-B6E874F134AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30377269-FA54-40A4-A20C-B6E874F134AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30377269-FA54-40A4-A20C-B6E874F134AE}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{30377269-FA54-40A4-A20C-B6E874F134AE}.Release|iPhone.Build.0 = Release|Any CPU
+		{30377269-FA54-40A4-A20C-B6E874F134AE}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{30377269-FA54-40A4-A20C-B6E874F134AE}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
