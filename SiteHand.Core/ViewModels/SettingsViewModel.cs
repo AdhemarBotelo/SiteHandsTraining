@@ -16,8 +16,17 @@ namespace SiteHand.Core.ViewModels
         public SettingsViewModel()
         {
             LogOutCmd = new Command(async () =>  await Logout(), () => !IsBusy);
-            UserName = Application.Current.Properties["User"].ToString();
             Title = "Settings";
+            try
+            {
+                UserName = Application.Current.Properties["User"].ToString();
+            }
+            catch (Exception)
+            {
+                UserName = "There was a problem getting user Name  contact your Administrator... :(";
+            }
+            
+            
         }
 
         async Task Logout()

@@ -37,7 +37,7 @@
                                 <StackLayout Orientation="Vertical">
                                     <StackLayout Orientation="Horizontal">
                                         <Label Text="Title" FontAttributes="Bold"  FontSize="Small"/>
-                                        <Label Text="{Binding Kind}"></Label>
+                                        <Label Text="{Binding volumeInfo.printType}"></Label>
                                     </StackLayout>
                                     <Label Text="{Binding volumeInfo.title}" 
                                             LineBreakMode="WordWrap" 

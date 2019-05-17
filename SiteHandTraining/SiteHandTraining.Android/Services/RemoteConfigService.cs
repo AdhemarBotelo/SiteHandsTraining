@@ -24,7 +24,7 @@ namespace SiteHandTraining.Droid.Services
             try
             {
                 InitRemoteConfig();
-                firebaseRemoteConfig.Fetch();
+                firebaseRemoteConfig.Fetch(0);
                 firebaseRemoteConfig.ActivateFetched();
                 return firebaseRemoteConfig.GetString(key);
             }

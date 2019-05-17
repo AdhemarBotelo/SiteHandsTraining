@@ -19,9 +19,11 @@ namespace SiteHand.Core.ViewModels
 
         public ICommand LoadItemsCommand { get; }
         public ICommand SearchBookCommand { get; }
+        public PrintType type;
 
         private readonly IRemoteConfig _remoteConfig;
         private readonly RestClient _restClient;
+
 
         public ListBooksViewModel(IRemoteConfig remoteConfig)
         {
@@ -54,7 +56,7 @@ namespace SiteHand.Core.ViewModels
         {
             IsBusy = true;
             IsNotFound = false;
-            PrintType type = PrintType.all;
+            type = PrintType.all;
 
             try
             {

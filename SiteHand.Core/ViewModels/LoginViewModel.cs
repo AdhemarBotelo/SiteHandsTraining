@@ -48,7 +48,7 @@ namespace SiteHand.Core.ViewModels
             {
                 Console.Write(ex.Message);
                 IsErrorAuthentication = true;
-                ErrorAuthentication = "Invalid Credentials or a FireBase Error" ;
+                ErrorAuthentication = "Invalid Credentials" ;
             }
             finally
             {
